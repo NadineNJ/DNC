@@ -1,0 +1,1806 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Montserrat:ital,wght@0,100..900&display=swap");
+
+body {
+    overflow-x: hidden;
+    direction: rtl;
+    /* Set the direction to right-to-left */
+}
+
+* {
+    font-family: "Cairo";
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Navbar */
+header {
+    background-color: rgb(25, 25, 128);
+    color: rgb(245, 250, 252);
+    font-weight: bold;
+    padding: 5px 50px;
+    border-top: solid 3px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    /* Ensure the navbar stays on top */
+}
+
+.header-content {
+    display: flex;
+    justify-content: flex-start;
+    /* Adjust to right align in RTL */
+    align-items: center;
+    height: 80px;
+}
+
+header .logo {
+    height: 120px;
+    width: auto;
+    /* Maintain aspect ratio */
+    margin-left: 20px;
+    /* Adjust margin for RTL */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    /* Adjust margin to push logo to the right */
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    /* Align items vertically center */
+}
+
+header nav ul li {
+    position: relative;
+    margin-left: 10px;
+    /* Adjust margin for RTL */
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: ease 1s;
+}
+
+header nav ul li a:hover {
+    color: white;
+    font-size: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        /* Stack logo and nav links */
+        align-items: flex-start;
+        /* Adjust for RTL */
+    }
+
+    .header-right {
+        flex-direction: column;
+        gap: 10px;
+        /* Reduce gap between nav links */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        /* Stack nav links vertically */
+        gap: 10px;
+    }
+
+    header .logo {
+        margin: 10px 0;
+        /* Add margin for better spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 10px;
+        /* Reduce padding on smaller screens */
+    }
+
+    header nav ul li a {
+        font-size: 14px;
+        /* Reduce font size on smaller screens */
+    }
+
+    header nav ul li a:hover {
+        font-size: 18px;
+        /* Adjust hover size */
+    }
+}
+
+
+/* Submenu */
+.header-content nav ul li:hover .submenu {
+    display: block;
+}
+
+.header-content nav ul .submenu {
+    display: none;
+    position: absolute;
+    background-color: #dcb853;
+    width: 300px;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+}
+
+.header-content nav ul .submenu li {
+    display: block;
+}
+
+.header-content nav ul .submenu li a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.header-content nav ul .submenu li a:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        /* Stack logo and nav links */
+        align-items: flex-start;
+        /* Align items to the start */
+        padding: 10px 20px;
+        /* Adjust padding for smaller screens */
+    }
+
+    .header-left {
+        width: 100%;
+        /* Full width for the logo section */
+        margin-bottom: 10px;
+        /* Space between logo and nav links */
+    }
+
+    .header-right {
+        display: none;
+        /* Hide the right-side links */
+    }
+
+
+
+    .menu-bar {
+        display: none;
+        /* Hide menu bar by default */
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: rgb(25, 25, 128);
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        max-width: 300px;
+        /* Limit the width of the menu bar */
+        z-index: 1000;
+        /* Ensure it appears above other elements */
+    }
+
+    .menu-bar.active {
+        display: block;
+        /* Show menu bar when active */
+    }
+
+    .menu-bar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        /* Align items horizontally */
+        flex-direction: column;
+        /* Stack items vertically in a column */
+    }
+
+    .menu-bar ul li {
+        margin: 10px 0;
+    }
+
+    .menu-bar ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        /* Ensure links fill the width */
+        padding: 10px 0;
+        /* Add padding for better click area */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 10px;
+        /* Reduce padding on smaller screens */
+    }
+
+    .menu-bar ul li a {
+        font-size: 14px;
+        /* Reduce font size on smaller screens */
+    }
+}
+
+/* indcrop icon  */
+.icon-stylus-note {
+    font-size: 24px;
+    /* Adjust the size of the icon */
+    color: #DCB853;
+    /* Change the color of the icon */
+    vertical-align: middle;
+    /* Align the icon vertically with the text */
+    margin-left: 5px;
+    /* Add some space between the text and the icon */
+    transition: color 0.3s ease;
+    /* Smooth transition for color changes */
+}
+
+.icon-stylus-note:hover {
+    color: #DCB853;
+    /* Change color on hover */
+}
+
+
+
+
+
+/* Submenu */
+.header-content nav ul li:hover .submenu {
+    display: block;
+}
+
+.header-content nav ul .submenu {
+    display: none;
+    position: absolute;
+    background-color: #dcb853;
+    width: 300px;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+}
+
+.header-content nav ul .submenu li {
+    display: block;
+}
+
+.header-content nav ul .submenu li a {
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.header-content nav ul .submenu li a:hover {
+    background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        /* Stack logo and nav links */
+        align-items: flex-start;
+        /* Align items to the start */
+        padding: 10px 20px;
+        /* Adjust padding for smaller screens */
+    }
+
+    .header-left {
+        width: 100%;
+        /* Full width for the logo section */
+        margin-bottom: 10px;
+        /* Space between logo and nav links */
+    }
+
+    .header-right {
+        display: none;
+        /* Hide the right-side links */
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px;
+    }
+
+    .menu-bar {
+        display: none;
+        /* Hide menu bar by default */
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: rgb(25, 25, 128);
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        max-width: 300px;
+        /* Limit the width of the menu bar */
+        z-index: 1000;
+        /* Ensure it appears above other elements */
+    }
+
+    .menu-bar.active {
+        display: block;
+        /* Show menu bar when active */
+    }
+
+    .menu-bar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        /* Align items horizontally */
+        flex-direction: column;
+        /* Stack items vertically in a column */
+    }
+
+    .menu-bar ul li {
+        margin: 10px 0;
+    }
+
+    .menu-bar ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 18px;
+        display: block;
+        /* Ensure links fill the width */
+        padding: 10px 0;
+        /* Add padding for better click area */
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 10px;
+        /* Reduce padding on smaller screens */
+    }
+
+    .menu-bar ul li a {
+        font-size: 14px;
+        /* Reduce font size on smaller screens */
+    }
+}
+
+/* indcrop icon  */
+.icon-stylus-note {
+    font-size: 24px;
+    /* Adjust the size of the icon */
+    color: #DCB853;
+    /* Change the color of the icon */
+    vertical-align: middle;
+    /* Align the icon vertically with the text */
+    margin-left: 5px;
+    /* Add some space between the text and the icon */
+    transition: color 0.3s ease;
+    /* Smooth transition for color changes */
+}
+
+.icon-stylus-note:hover {
+    color: #DCB853;
+    /* Change color on hover */
+}
+
+
+
+
+
+/* Social icons */
+.wrapper {
+    display: flex;
+    gap: 17px;
+    align-items: center;
+    /* Align social icons vertically center */
+}
+
+.wrapper .button {
+    display: inline-block;
+    margin-bottom: 15px;
+    height: 30px;
+    /* Adjust height as needed */
+    width: 30px;
+    /* Adjust width as needed */
+    overflow: hidden;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+    /* Reduced shadow */
+    transition: width 0.3s ease-out, height 0.3s ease-out;
+}
+
+.wrapper .button:hover {
+    width: 120px;
+    /* Adjust hover width as needed */
+    height: 40px;
+    /* Adjust hover height as needed */
+}
+
+.wrapper .button .icon {
+    display: inline-block;
+    height: 30px;
+    /* Adjust icon height as needed */
+    width: 30px;
+    /* Adjust icon width as needed */
+    text-align: center;
+    border-radius: 50px;
+    line-height: 30px;
+    /* Adjust line height to center vertically */
+    transition: background-color 0.3s ease-out;
+}
+
+.wrapper .button:hover .icon i {
+    color: #fff;
+}
+
+.wrapper .button span {
+    font-size: 14px;
+    /* Adjust font size as needed */
+    font-weight: 500;
+    line-height: 30px;
+    /* Adjust line height to center vertically */
+    margin-left: 6px;
+    /* Adjust margin as needed */
+    transition: color 0.3s ease-out;
+}
+
+.spanfil {
+    color: rgb(253, 253, 253);
+}
+
+.icon {
+    color: white;
+}
+
+.button a:hover {
+    text-decoration: none;
+}
+
+/* Adjust individual button colors */
+.wrapper .button:nth-child(1) .icon {
+    background: #104bc0;
+}
+
+.wrapper .button:nth-child(2) .icon {
+    background: red;
+}
+
+.wrapper .button:nth-child(3) .icon {
+    background: #0c4370;
+}
+
+.wrapper .button:nth-child(4) .icon {
+    background: #70200c;
+}
+
+@media screen and (max-width: 480px) {
+    .header-content {
+        flex-direction: column;
+        align-items: center;
+        /* Center items on very small screens */
+        padding: 10px;
+        /* Add some padding for better spacing */
+    }
+
+    header .logo {
+        height: 60px;
+        margin-right: 0;
+        /* Remove margin to center the logo */
+        margin-bottom: 10px;
+        /* Add bottom margin for spacing */
+    }
+
+    /* Social icons adjustments for very small screens */
+    .wrapper {
+        position: fixed;
+        bottom: 10px;
+        /* Adjust as needed */
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        /* Center the social icons */
+        padding: 0;
+        width: 100%;
+        /* Ensure it spans the full width of the screen */
+    }
+
+    .wrapper .button {
+        height: 30px;
+        /* Adjust height as needed */
+        width: 30px;
+        /* Adjust width to make icons square */
+        margin: 0 5px;
+        /* Add margin for spacing between icons */
+    }
+
+    .wrapper .button:hover {
+        width: 40px;
+        /* Slightly increase width on hover */
+        height: 40px;
+        /* Slightly increase height on hover */
+    }
+
+    .wrapper .button span {
+        font-size: 12px;
+        /* Adjusted font size for icon names */
+    }
+
+    /* Ensure text links in header are centered */
+    .header-content nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+        /* Add bottom margin for spacing */
+    }
+
+    .header-content nav a {
+        margin: 5px 0;
+        /* Add margin for spacing between links */
+    }
+}
+
+/* languages */
+
+.lang-menu {
+    width: 150px;
+    text-align: right;
+    /* Align text to the right */
+    font-weight: bold;
+    margin-top: 29px;
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.lang-menu .selected-lang {
+    display: flex;
+    align-items: center;
+    line-height: 2;
+    cursor: pointer;
+    gap: 3px;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.lang-menu .selected-lang .flag {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    /* Move flag to the left */
+    background-image: url("https://flagsapi.com/TN/flat/64.png");
+    /* Default French flag */
+}
+
+.lang-menu ul {
+    margin: 0;
+    padding: 0;
+    display: none;
+    background-color: #fff;
+    border: 1px solid #f8f8f8;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    text-align: right;
+    /* Align text to the right in dropdown */
+}
+
+.lang-menu ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.lang-menu ul li a {
+    text-decoration: none;
+    width: 100%;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    color: #000;
+}
+
+.lang-menu ul li a .flag {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    /* Move flag to the left */
+}
+
+.fr .flag {
+    background-image: url("https://flagsapi.com/FR/flat/64.png");
+}
+
+.ar .flag {
+    background-image: url("https://flagsapi.com/TN/flat/64.png");
+}
+
+.lang-menu:hover ul,
+.lang-menu ul.show {
+    display: block;
+}
+
+.lang-menu ul li a:hover {
+    background-color: #f0f0f0;
+}
+
+
+
+
+/*1 section carousel*/
+.carousel-section {
+    height: 110vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    padding: 20px;
+    font-family: "Arial", sans-serif;
+}
+
+.carousel-caption h2 {
+    font-size: 2.5rem;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-caption .spann {
+    color: #ff8b2d;
+    font-weight: bold;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.carousel-caption a.btn {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: rgb(25, 25, 128);
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.carousel-caption a.btn:hover {
+    background-color: #ff8b2d;
+}
+
+/* Adjust carousel item images */
+.carousel-item img {
+    height: 1000px;
+    /* Adjust the height as per your design needs */
+    object-fit: cover;
+    /* Ensures the image covers the entire container */
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 50px !important;
+    /* Ensure this size is applied */
+    height: 50px !important;
+    background-size: 50px 50px !important;
+    /* Adjust as needed */
+    filter: invert(1) !important;
+    /* Apply color inversion */
+
+}
+
+
+
+/* Media Query for Small Screens */
+@media screen and (max-width: 768px) {
+    .carousel-caption {
+        padding: 15px;
+        font-size: 1rem;
+    }
+
+    .carousel-caption h2 {
+        font-size: 2rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .carousel-caption a.btn {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Media Query for Very Small Screens */
+@media screen and (max-width: 480px) {
+    .carousel-caption {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .carousel-caption h2 {
+        font-size: 1.5rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
+
+    .carousel-caption a.btn {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+/* 2 section */
+/* General Styles */
+.dnc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    margin-top: 50px;
+    direction: rtl;
+    /* For right-to-left layout */
+}
+
+.dnc h2 {
+    color: #ff8b2d;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    margin-top: 56px;
+    /* Add margin to move the text down */
+}
+
+.dnc p {
+    font-size: 16px;
+    margin: 10px 0;
+    font-style: italic;
+    color: black;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    /* Add margin to move the text down */
+}
+
+.dnc-desc {
+    flex: 1;
+    margin-right: 20px;
+    /* Adjust for RTL */
+}
+
+.dnc-img {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border: none;
+    padding: 0;
+}
+
+.video-wrapper {
+    position: relative;
+    margin-top: 20px;
+    background-size: cover;
+    overflow: hidden;
+    border: none;
+    padding: 0;
+}
+
+.video-overlay {
+    position: absolute;
+    text-align: right;
+    top: 20px;
+    width: 100%;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 20px 20px 0 0;
+    border: none;
+}
+
+.video-title-container {
+    margin-right: 20px;
+    /* Adjust for RTL */
+}
+
+.video-title-container p {
+    font-size: 18px;
+    margin: 0;
+    color: white;
+    margin-top: 10px;
+}
+
+.video-title {
+    font-size: 18px;
+    color: #fff;
+    margin: 0;
+    margin-top: 10px;
+}
+
+.play-button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+.play-toggle:checked+.play-button {
+    display: none;
+}
+
+.rgx-icon {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: block;
+    z-index: 1000;
+}
+
+.dnc-img video {
+    width: 100%;
+    height: auto;
+    border: 4px solid #191980;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 15px;
+}
+
+.buttton {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+
+.buttton button {
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.4s;
+    letter-spacing: 2px;
+}
+
+.buttton a {
+    color: #ff8b2d;
+}
+
+.buttton button:hover {
+    background-color: rgba(155, 86, 65, 0.315);
+    transform: scale(1.05);
+    box-shadow: 0 6px 3px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .dnc {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dnc-img video {
+        width: 100%;
+        margin-top: 100px;
+    }
+
+    .video-overlay {
+        position: absolute;
+        top: 72px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .dnc-desc {
+        margin-right: 0;
+        /* Remove margin for mobile */
+        margin-top: 20px;
+        /* Add space above text */
+    }
+
+    .dnc-img {
+        margin: 20px 0;
+        /* Adjust margin for mobile */
+    }
+
+    .video-title-container p {
+        font-size: 16px;
+        /* Smaller font size for mobile */
+    }
+
+    .video-title {
+        font-size: 16px;
+        /* Smaller font size for mobile */
+    }
+
+    .button,
+    .buttton {
+        flex-direction: column;
+        /* Stack buttons vertically on mobile */
+        align-items: center;
+        /* Center-align buttons on mobile */
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .dnc {
+        padding: 50px;
+    }
+
+    .dnc h2 {
+        font-size: 28px;
+        margin-top: 56px;
+    }
+
+    .dnc p {
+        font-size: 18px;
+    }
+
+    .dnc-img {
+        max-width: 600px;
+    }
+}
+
+/* 3 section*/
+.choices {
+    background-color: #f0f0f0;
+    /* Light gray background */
+    padding: 20px;
+    text-align: center;
+    /* Center align text */
+}
+
+.text {
+    color: #333;
+    /* Darker text color for better readability */
+    margin-bottom: 30px;
+    border-bottom: 3px solid #ff8b2d;
+    /* Red underline */
+    letter-spacing: 1px;
+    /* Adjusted letter spacing */
+    line-height: 1.5;
+    /* Increased line height for better readability */
+    display: inline-block;
+    padding-bottom: 10px;
+    /* Added padding at bottom of heading */
+    text-transform: uppercase;
+    /* Converts text to uppercase */
+    font-weight: bold;
+    /* Ensures bold font weight */
+    margin-left: 40px;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Allow items to wrap to next line */
+    padding: 20px;
+}
+
+.choice-container {
+    width: 100%;
+    /* Each container takes full width initially */
+    margin-bottom: 20px;
+    /* Space between containers */
+}
+
+.choice-img,
+.partenaire-img {
+    width: 100%;
+    /* Full width for images */
+    max-width: 300px;
+    /* Limit maximum width */
+    margin: 0 auto;
+    /* Center align within their container */
+}
+
+.jeune,
+.partenaire-ch2 {
+    text-align: center;
+    /* Center align text/buttons */
+    margin-top: 10px;
+    /* Adjust spacing */
+}
+
+.jeune a,
+.partenaire-ch2 a {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 20px;
+    background-color: rgb(25, 25, 128);
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.jeune a:hover,
+.partenaire-ch2 a:hover {
+    background-color: #ff8b2d;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .choice-container {
+        width: 50%;
+        /* Two items per row on larger screens */
+    }
+}
+
+/* 4 section */
+.projects-section {
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.section-titlee-containerr {
+    text-align: center;
+    /* Center-aligns the content within this container */
+}
+
+.section-titlee {
+    color: #333;
+    /* Darker text color for better readability */
+    margin-bottom: 30px;
+    border-bottom: 3px solid #ff8b2d;
+    /* Red underline */
+    letter-spacing: 1px;
+    /* Adjusted letter spacing */
+    line-height: 1.5;
+    /* Increased line height for better readability */
+    display: inline-block;
+    padding-bottom: 10px;
+    /* Added padding at bottom of heading */
+    text-transform: uppercase;
+    /* Converts text to uppercase */
+    font-weight: bold;
+    /* Ensures bold font weight */
+    max-width: 80%;
+    /* Center-aligns the text within the title */
+}
+
+.projects-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 30%;
+    /* Adjust to fit 3 items in a row */
+    text-align: left;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.project-text {
+    padding: 15px;
+}
+
+.project-description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.see-more-button {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: #ff8b2d;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.see-more-button:hover {
+    background-color: rgb(219, 215, 215);
+}
+
+.view-all-button {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.view-all-projects-button,
+.view-all-projects-bttn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background-color: rgb(25, 25, 128);
+    color: rgb(247, 246, 246);
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.view-all-projects-bttn:hover {
+    background-color: rgb(66, 66, 174);
+    color: white;
+    text-decoration: none;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .project {
+        max-width: 45%;
+        /* Adjust to fit 2 items in a row */
+    }
+}
+
+@media (max-width: 768px) {
+    .project {
+        max-width: 100%;
+        /* Stack items in a single column */
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-titlee {
+        max-width: 100%;
+        /* Full-width title */
+    }
+
+    .view-all-projects-button,
+    .view-all-projects-bttn {
+        padding: 12px 24px;
+    }
+}
+
+/* 5 Section */
+.actualitees {
+    background-color: #f1f1f1;
+    /* Light gray background */
+    text-align: center;
+    padding: 50px 0;
+    /* Increased padding for better spacing */
+    margin-top: 50px;
+    /* Adjusted margin-top */
+}
+
+.actualitees h2 {
+    color: #333;
+    /* Darker text color for better readability */
+    margin-bottom: 30px;
+    border-bottom: 3px solid #ff8b2d;
+    /* Red underline */
+    letter-spacing: 1px;
+    /* Adjusted letter spacing */
+    line-height: 1.5;
+    /* Increased line height for better readability */
+    display: inline-block;
+    padding-bottom: 10px;
+    /* Added padding at bottom of heading */
+    text-transform: uppercase;
+    /* Converts text to uppercase */
+    font-weight: bold;
+    /* Ensures bold font weight */
+    max-width: 80%;
+    /* Limits width to ensure responsiveness */
+}
+
+.actualitees .containerr {
+    display: flex;
+    margin-right: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Added gap between cards */
+    margin-top: 30px;
+    /* Increased top margin for better spacing */
+}
+
+.actualitees .cards {
+    background-color: white;
+    width: 300px;
+    /* Fixed width for consistent card size */
+    border: 1px solid #ddd;
+    /* Light border */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Soft shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    /* Smooth transition */
+}
+
+.actualitees .cards:hover {
+    transform: translateY(-5px);
+    /* Lift card on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Enhanced shadow on hover */
+}
+
+.actualitees img {
+    width: 100%;
+    height: 200px;
+    /* Adjusted height for image */
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+    /* Rounded top corners */
+}
+
+.actualitees .cards-desc {
+    padding: 20px;
+    /* Added padding inside the card */
+}
+
+.actualitees .cards-desc p {
+    font-size: 14px;
+    /* Adjusted font size */
+    line-height: 1.6;
+    /* Increased line height for better spacing */
+    color: #666;
+    /* Slightly lighter text color */
+    margin-bottom: 15px;
+    /* Bottom margin for paragraphs */
+}
+
+.actualitees button {
+    background-color: rgb(25, 25, 128);
+    /* Red button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.actualitees button:hover {
+    background-color: #ff8b2d;
+    /* Darker red on hover */
+}
+
+/* 6 section*/
+/* Styles for testimonial section */
+.section-team {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 40px 0;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    margin-left: 85px;
+    color: #333;
+    text-transform: uppercase;
+    /* Converts text to uppercase */
+    text-align: center;
+    /* Centers the text horizontally */
+    border-bottom: 2px solid #ff8b2d;
+    /* Adds a bottom border */
+    padding-bottom: 10px;
+    /* Adds space between text and border */
+    max-width: 80%;
+    /* Limits width to ensure responsiveness */
+}
+
+.slide-container {
+    max-width: 1120px;
+    width: 100%;
+    background-color: gray;
+    padding: 40px 0;
+    border-radius: 40px 60px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.slide-content {
+    margin: 0 40px;
+    position: relative;
+}
+
+.card {
+    border-radius: 25px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.image-content,
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+
+.image-content {
+    position: relative;
+    gap: 5px;
+    /* Changed from row-gap to gap */
+    padding: 25px 0;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 5px 15px 0 25px;
+    background-color: rgb(25, 25, 128);
+    /* Red button color */
+    z-index: 1;
+}
+
+.card-image {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: white;
+    padding: 3px;
+    z-index: 2;
+}
+
+.card-image .card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 30px 50px solid #ff8b2d;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.description {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Swiper specific styles */
+/* Swiper specific styles */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    color: #0c4370;
+}
+
+/* Swiper specific styles */
+.swiper-pagination {
+    position: absolute;
+    bottom: 77px;
+    margin-left: 36px;
+    transform: translateX(-50%);
+    color: #ff8b2d;
+}
+
+.swiper-pagination-bullet {
+    color: #ff8b2d;
+    width: 12px;
+    height: 12px;
+    opacity: 0.6;
+    border-radius: 50%;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.swiper-pagination-bullet span {
+    color: #ff8b2d;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+.buttonnn-containerr {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 85px;
+}
+
+.buttonnn {
+    padding: 12px 24px;
+    background-color: #ff8b2d;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.buttonnn:hover {
+    background-color: #e57200;
+    color: black;
+}
+
+/* Selector */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 35px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ff8b2d;
+    border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: black;
+}
+
+/* FOOTER */
+.footer {
+    background-color: rgb(25, 25, 128);
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+.logo-footer img {
+    margin-right: -150px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-linkss,
+.footer-links {
+    margin: 0 20px;
+    /* Adjust margin for spacing */
+    margin-top: 80px;
+}
+
+.footer-linkss h3,
+.footer-links h3 {
+    margin-bottom: 40px;
+}
+
+/* New styles for list items */
+.footer-linkss ul,
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /* Ensure no additional margin */
+}
+
+.footer-linkss li,
+.footer-links li {
+    position: relative;
+    text-align: start;
+    margin-bottom: 10px;
+    /* Increase spacing between items */
+    padding-left: 30px;
+    /* Space for custom bullet */
+    font-size: 1em;
+    color: #ddd;
+    /* Light text color */
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-linkss li::before,
+.footer-links li::before {
+    content: "•";
+    /* Custom bullet point */
+    position: absolute;
+    right: -15px;
+    color: #ff8b2d;
+    /* Bullet color */
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+.footer-linkss li:hover,
+.footer-links li:hover {
+    color: #ff8b2d;
+    /* Change text color on hover */
+    padding-left: 40px;
+    /* Add more space on hover */
+}
+
+.orange-line {
+    background-color: #191980;
+    /* Orange color */
+    padding: 1px 0;
+    /* Space around the line */
+    position: relative;
+    /* Allows positioning of the line */
+}
+
+.container {
+    text-align: center;
+    /* Center the text */
+    color: white;
+    /* Text color */
+    font-family: Arial, sans-serif;
+    /* Font style */
+    font-size: 14px;
+    /* Font size */
+    margin-top: 30px;
+}
+
+.container a {
+    color: white;
+    /* Link color */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.container a:hover {
+    color: #ff8b2d;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .logo-footer img {
+        margin-right: 100px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo-footer img {
+        margin-right: 50px;
+        margin-top: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-linkss,
+    .footer-links {
+        margin: 0;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-footer img {
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+
+    .footer-content {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .footer-linkss,
+    .footer-links {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .footer-linkss li,
+    .footer-links li {
+        padding-left: 20px;
+        /* Adjust for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-footer img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .footer-linkss,
+    .footer-links {
+        margin-top: 20px;
+    }
+
+    .footer-linkss li,
+    .footer-links li {
+        padding-left: 15px;
+        /* Further adjust for very small screens */
+    }
+}
+
+
+
+.logo-footter {
+    display: flex;
+    align-items: center;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-columnn {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .logo-footter img {
+        margin-right: 0;
+        margin-bottom: 10px;
+        /* Stack the image and text vertically for small screens */
+    }
+
+    .logo-description {
+        max-width: 100%;
+        font-size: 14px;
+        /* Adjust font size for readability on smaller screens */
+    }
+}
+
+
+
+
+
+.footerr-columnn {
+    display: flex;
+    justify-content: flex-end;
+    /* Align items to the right */
+    align-items: center;
+    direction: rtl;
+    /* Set text direction to right-to-left */
+    text-align: right;
+    /* Align text to the right */
+    padding: 15px;
+    /* Add padding for spacing */
+}
+
+.logo-footter {
+    display: flex;
+    align-items: flex-start;
+    /* Align items to the start of the container */
+    position: relative;
+    /* Allow positioning of child elements */
+}
+
+.logo-footter img {
+    margin-right: -150px;
+    /* Space between the image and text */
+    /* Adjust this value to move the logo slightly to the right */
+}
+
+.logo-description {
+    font-size: 16px;
+    margin-right: 200px;
+    /* Adjust font size for readability */
+    color: white;
+    /* Adjust text color */
+    margin-top: -100px;
+    /* Align text directly below the image */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footerr-columnn {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        /* Align text to the left on small screens */
+    }
+
+    .logo-footter {
+        flex-direction: column;
+        /* Stack logo and text vertically */
+        align-items: flex-start;
+    }
+
+    .logo-footter img {
+        margin-right: 0;
+        /* Remove margin on small screens */
+        margin-bottom: 10px;
+        /* Add space below the image */
+    }
+
+    .logo-description {
+        max-width: 100%;
+        font-size: 14px;
+        color: white;
+        /* Adjust font size for readability on smaller screens */
+    }
+}

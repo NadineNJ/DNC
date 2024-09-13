@@ -1,0 +1,1562 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Montserrat:ital,wght@0,100..900&display=swap");
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  font-family: "Cairo";
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Navbar */
+header {
+  background-color: rgb(25, 25, 128);
+  color: rgb(245, 250, 252);
+  font-weight: bold;
+  padding: 5px 50px;
+  border-top: solid 3px;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  /* Ensure the navbar stays on top */
+}
+
+.header-content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 80px;
+}
+
+header .logo {
+  height: 120px;
+  width: auto;
+  /* Maintain aspect ratio */
+  margin-right: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  /* Push logo to the right */
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  /* Align items vertically center */
+}
+
+header nav ul li {
+  position: relative;
+  margin-right: 10px;
+}
+
+header nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: ease 1s;
+}
+
+header nav ul li a:hover {
+  color: white;
+  font-size: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    /* Stack logo and nav links */
+    align-items: flex-end;
+    /* Align items to the end */
+  }
+
+  .header-right {
+    flex-direction: column;
+    gap: 10px;
+    /* Reduce gap between nav links */
+  }
+
+  header nav ul {
+    flex-direction: column;
+    /* Stack nav links vertically */
+    gap: 10px;
+  }
+
+  header .logo {
+    margin: 10px 0;
+    /* Add margin for better spacing */
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 10px;
+    /* Reduce padding on smaller screens */
+  }
+
+  header nav ul li a {
+    font-size: 14px;
+    /* Reduce font size on smaller screens */
+  }
+
+  header nav ul li a:hover {
+    font-size: 18px;
+    /* Adjust hover size */
+  }
+}
+
+/* Submenu */
+.header-content nav ul li:hover .submenu {
+  display: block;
+}
+
+.header-content nav ul .submenu {
+  display: none;
+  position: absolute;
+  background-color: #dcb853;
+  width: 300px;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+}
+
+.header-content nav ul .submenu li {
+  display: block;
+}
+
+.header-content nav ul .submenu li a {
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.header-content nav ul .submenu li a:hover {
+  background-color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    /* Stack logo and nav links */
+    align-items: flex-start;
+    /* Align items to the start */
+    padding: 10px 20px;
+    /* Adjust padding for smaller screens */
+  }
+
+  .header-left {
+    width: 100%;
+    /* Full width for the logo section */
+    margin-bottom: 10px;
+    /* Space between logo and nav links */
+  }
+
+  .header-right {
+    display: none;
+    /* Hide the right-side links */
+  }
+
+
+
+  .menu-bar {
+    display: none;
+    /* Hide menu bar by default */
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: rgb(25, 25, 128);
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 300px;
+    /* Limit the width of the menu bar */
+    z-index: 1000;
+    /* Ensure it appears above other elements */
+  }
+
+  .menu-bar.active {
+    display: block;
+    /* Show menu bar when active */
+  }
+
+  .menu-bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    /* Align items horizontally */
+    flex-direction: column;
+    /* Stack items vertically in a column */
+  }
+
+  .menu-bar ul li {
+    margin: 10px 0;
+  }
+
+  .menu-bar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    /* Ensure links fill the width */
+    padding: 10px 0;
+    /* Add padding for better click area */
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 10px;
+    /* Reduce padding on smaller screens */
+  }
+
+  .menu-bar ul li a {
+    font-size: 14px;
+    /* Reduce font size on smaller screens */
+  }
+}
+
+/* indcrop icon  */
+.icon-stylus-note {
+  font-size: 24px;
+  /* Adjust the size of the icon */
+  color: #DCB853;
+  /* Change the color of the icon */
+  vertical-align: middle;
+  /* Align the icon vertically with the text */
+  margin-left: 5px;
+  /* Add some space between the text and the icon */
+  transition: color 0.3s ease;
+  /* Smooth transition for color changes */
+}
+
+.icon-stylus-note:hover {
+  color: #DCB853;
+  /* Change color on hover */
+}
+
+
+
+
+
+
+
+
+
+/* Social icons */
+.wrapper {
+  display: flex;
+  gap: 17px;
+  align-items: center;
+  /* Align social icons vertically center */
+}
+
+.wrapper .button {
+  display: inline-block;
+  margin-bottom: 15px;
+  height: 30px;
+  /* Adjust height as needed */
+  width: 30px;
+  /* Adjust width as needed */
+  overflow: hidden;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  /* Reduced shadow */
+  transition: width 0.3s ease-out, height 0.3s ease-out;
+}
+
+.wrapper .button:hover {
+  width: 120px;
+  /* Adjust hover width as needed */
+  height: 40px;
+  /* Adjust hover height as needed */
+}
+
+.wrapper .button .icon {
+  display: inline-block;
+  height: 30px;
+  /* Adjust icon height as needed */
+  width: 30px;
+  /* Adjust icon width as needed */
+  text-align: center;
+  border-radius: 50px;
+  line-height: 30px;
+  /* Adjust line height to center vertically */
+  transition: background-color 0.3s ease-out;
+}
+
+.wrapper .button:hover .icon i {
+  color: #fff;
+}
+
+.wrapper .button span {
+  font-size: 14px;
+  /* Adjust font size as needed */
+  font-weight: 500;
+  line-height: 30px;
+  /* Adjust line height to center vertically */
+  margin-left: 6px;
+  /* Adjust margin as needed */
+  transition: color 0.3s ease-out;
+}
+
+.spanfil {
+  color: rgb(253, 253, 253);
+}
+
+.icon {
+  color: white;
+}
+
+.button a:hover {
+  text-decoration: none;
+}
+
+/* Adjust individual button colors */
+.wrapper .button:nth-child(1) .icon {
+  background: #104bc0;
+}
+
+.wrapper .button:nth-child(2) .icon {
+  background: red;
+}
+
+.wrapper .button:nth-child(3) .icon {
+  background: #0c4370;
+}
+
+.wrapper .button:nth-child(4) .icon {
+  background: #70200c;
+}
+
+@media screen and (max-width: 480px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    /* Center items on very small screens */
+    padding: 10px;
+    /* Add some padding for better spacing */
+  }
+
+  header .logo {
+    height: 60px;
+    margin-right: 0;
+    /* Remove margin to center the logo */
+    margin-bottom: 10px;
+    /* Add bottom margin for spacing */
+  }
+
+  /* Social icons adjustments for very small screens */
+  .wrapper {
+    position: fixed;
+    bottom: 10px;
+    /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    /* Center the social icons */
+    padding: 0;
+    width: 100%;
+    /* Ensure it spans the full width of the screen */
+  }
+
+  .wrapper .button {
+    height: 30px;
+    /* Adjust height as needed */
+    width: 30px;
+    /* Adjust width to make icons square */
+    margin: 0 5px;
+    /* Add margin for spacing between icons */
+  }
+
+  .wrapper .button:hover {
+    width: 40px;
+    /* Slightly increase width on hover */
+    height: 40px;
+    /* Slightly increase height on hover */
+  }
+
+  .wrapper .button span {
+    font-size: 12px;
+    /* Adjusted font size for icon names */
+  }
+
+  /* Ensure text links in header are centered */
+  .header-content nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    /* Add bottom margin for spacing */
+  }
+
+  .header-content nav a {
+    margin: 5px 0;
+    /* Add margin for spacing between links */
+  }
+}
+
+
+/* languages */
+
+.lang-menu {
+  width: 150px;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 29px;
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.lang-menu .selected-lang {
+  display: flex;
+  align-items: center;
+  line-height: 2;
+  cursor: pointer;
+  gap: 3px;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.lang-menu .selected-lang .flag {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  background-image: url("https://flagsapi.com/FR/flat/64.png");
+  /* Default French flag */
+}
+
+.lang-menu ul {
+  margin: 0;
+  padding: 0;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #f8f8f8;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  width: 150px;
+  border-radius: 5px;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.lang-menu ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.lang-menu ul li a {
+  text-decoration: none;
+  width: 100%;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  color: #000;
+}
+
+.lang-menu ul li a .flag {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+
+.fr .flag {
+  background-image: url("https://flagsapi.com/FR/flat/64.png");
+}
+
+.ar .flag {
+  background-image: url("https://flagsapi.com/TN/flat/64.png");
+}
+
+.lang-menu:hover ul,
+.lang-menu ul.show {
+  display: block;
+}
+
+.lang-menu ul li a:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+/* Social icons */
+.wrapper {
+  display: flex;
+  gap: 17px;
+  align-items: center;
+  /* Align social icons vertically center */
+}
+
+.wrapper .button {
+  display: inline-block;
+  margin-bottom: 1px;
+  height: 30px;
+  /* Adjust height as needed */
+  width: 30px;
+  /* Adjust width as needed */
+  overflow: hidden;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+  /* Reduced shadow */
+  transition: width 0.3s ease-out, height 0.3s ease-out;
+}
+
+.wrapper .button:hover {
+  width: 120px;
+  /* Adjust hover width as needed */
+  height: 40px;
+  /* Adjust hover height as needed */
+}
+
+.wrapper .button .icon {
+  display: inline-block;
+  height: 30px;
+  /* Adjust icon height as needed */
+  width: 30px;
+  /* Adjust icon width as needed */
+  text-align: center;
+  border-radius: 50px;
+  line-height: 30px;
+  /* Adjust line height to center vertically */
+  transition: background-color 0.3s ease-out;
+}
+
+.wrapper .button:hover .icon i {
+  color: #fff;
+}
+
+.wrapper .button span {
+  font-size: 14px;
+  /* Adjust font size as needed */
+  font-weight: 500;
+  line-height: 30px;
+  /* Adjust line height to center vertically */
+  margin-left: 6px;
+  /* Adjust margin as needed */
+  transition: color 0.3s ease-out;
+}
+
+.spanfil {
+  color: rgb(253, 253, 253);
+}
+
+.icon {
+  color: white;
+}
+
+.button a:hover {
+  text-decoration: none;
+}
+
+/* Adjust individual button colors */
+.wrapper .button:nth-child(1) .icon {
+  background: #104bc0;
+}
+
+.wrapper .button:nth-child(2) .icon {
+  background: red;
+}
+
+.wrapper .button:nth-child(3) .icon {
+  background: #0c4370;
+}
+
+.wrapper .button:nth-child(4) .icon {
+  background: #70200c;
+}
+
+@media screen and (max-width: 480px) {
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    /* Center items on very small screens */
+    padding: 10px;
+    /* Add some padding for better spacing */
+  }
+
+  header .logo {
+    height: 60px;
+    margin-right: 0;
+    /* Remove margin to center the logo */
+    margin-bottom: 10px;
+    /* Add bottom margin for spacing */
+  }
+
+  /* Social icons adjustments for very small screens */
+  .wrapper {
+    position: fixed;
+    bottom: 10px;
+    /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    /* Center the social icons */
+    padding: 0;
+    width: 100%;
+    /* Ensure it spans the full width of the screen */
+  }
+
+  .wrapper .button {
+    height: 30px;
+    /* Adjust height as needed */
+    width: 30px;
+    /* Adjust width to make icons square */
+    margin: 0 5px;
+    /* Add margin for spacing between icons */
+  }
+
+  .wrapper .button:hover {
+    width: 40px;
+    /* Slightly increase width on hover */
+    height: 40px;
+    /* Slightly increase height on hover */
+  }
+
+  .wrapper .button span {
+    font-size: 12px;
+    /* Adjusted font size for icon names */
+  }
+
+  /* Ensure text links in header are centered */
+  .header-content nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    /* Add bottom margin for spacing */
+  }
+
+  .header-content nav a {
+    margin: 5px 0;
+    /* Add margin for spacing between links */
+  }
+}
+
+/* INTRO */
+.contact-header {
+  position: relative;
+  background-image: url("./image/dance-2989824_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+}
+
+.overlay .containerr h1 {
+  text-align: center;
+  margin-top: 160px;
+}
+
+.contact-header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.contact-header .container {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+
+/* Content */
+.container {
+  max-width: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+
+}
+
+.containerr h1 {
+  text-align: center;
+  margin-top: 100px;
+
+}
+
+.image-text-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+
+}
+
+.image-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sectionn {
+  flex: 1;
+  padding: 20px;
+}
+
+.sectionn li {
+  text-align: left;
+}
+
+.sectionn h1 {
+  font-size: 2em;
+  text-align: center;
+  color: rgb(25, 25, 128);
+  margin-bottom: 10px;
+}
+
+.sectionn h2 {
+  font-size: 1.2em;
+  text-align: left;
+  text-decoration: underline;
+  color: #ff8b2d;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .image-text-container {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .image-container,
+  .section {
+    width: 100%;
+  }
+}
+
+/* Text */
+.txt {
+  background-color: #f0eeed;
+  text-align: center;
+  padding: 50px 0;
+  margin-top: 50px;
+}
+
+.txt h2 {
+  color: #333;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #ff8b2d;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  display: inline-block;
+  padding-bottom: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  max-width: 80%;
+}
+
+/* Form */
+.form-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #f3f4f7, #e0e0e0);
+}
+
+h2 {
+  text-align: center;
+  color: rgb(25, 25, 128);
+}
+
+.registration-form .form-button {
+  text-align: center;
+}
+
+.registration-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 16px;
+}
+
+.registration-form .form-group {
+  margin-bottom: 20px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="tel"],
+.registration-form select {
+  width: calc(100% - 16px);
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form select {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.registration-form select:hover,
+.registration-form select:focus {
+  color: #333;
+}
+
+.registration-form input[type="submit"] {
+  background-color: rgb(25, 25, 128);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.registration-form input[type="submit"]:hover {
+  background-color: #ff8b2d;
+}
+
+/* Checkbox */
+.consent-label {
+  font-size: 14px;
+  color: #555;
+}
+
+.consent-label a {
+  color: #ff8b2d;
+  text-decoration: underline;
+}
+
+.consent-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.consent-container input {
+  margin-right: 10px;
+}
+
+/* Processus d'admission */
+.admission-process-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 3px solid rgb(25, 25, 128);
+  background-clip: padding-box;
+}
+
+.admission-process-container h2 {
+  text-align: start;
+  color: rgb(25, 25, 128);
+  margin-bottom: 20px;
+  margin-left: 50px;
+}
+
+.admission-process-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* Ensure items wrap on smaller screens */
+}
+
+.admission-process-content p {
+  flex: 1;
+  margin-right: 20px;
+  color: rgb(25, 25, 128);
+  font-size: 16px;
+}
+
+.admission-process-content img {
+  max-width: 40%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.admission-process-content ul {
+  flex: 1;
+  margin-top: 20px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.admission-process-content li {
+  margin-bottom: 10px;
+}
+
+.register-button {
+  display: inline-block;
+  background-color: rgb(25, 25, 128);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px 23px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 200px;
+}
+
+.register-buttonn {
+  display: inline-block;
+  background-color: rgb(25, 25, 128);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px 23px;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  margin-top: 20px;
+  margin-left: 200px;
+}
+
+.register-button:hover {
+  background-color: #ff8b2d;
+}
+
+.register-buttonn:hover {
+  background-color: #ff8b2d;
+}
+
+.add-section {
+  margin: 50px auto;
+  text-align: center;
+}
+
+.add-section h2 {
+  color: rgb(25, 25, 128);
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  text-decoration: underline;
+  border-bottom: 3px solid #ff8b2d;
+  padding-bottom: 10px;
+}
+
+.add-section img {
+  max-width: 200px;
+  border-radius: 50%;
+  margin: 10px;
+  border: 5px solid rgb(25, 25, 128);
+}
+
+.add-section p {
+  color: rgb(25, 25, 128);
+  font-size: 1.1em;
+  max-width: 80%;
+  margin: auto;
+}
+
+.contact {
+  background-color: #f0f0f0;
+  padding: 50px 20px;
+}
+
+.contact h2 {
+  color: rgb(25, 25, 128);
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-info {
+  text-align: center;
+}
+
+.contact-info p {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.contact-info a {
+  color: #ff8b2d;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/*ICON NOTE*/
+.notes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #f5f5f5;
+  /* Light grey background */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  margin: 20px 0;
+}
+
+.icon-note {
+  flex: 1;
+  text-align: center;
+}
+
+.icon-note dotlottie-player {
+  border-radius: 8px;
+  /* Rounded corners for the player */
+  border: 3px solid rgb(25, 25, 128);
+}
+
+.note-txt {
+  flex: 2;
+  padding: 20px;
+  background-color: #ffffff;
+  /* White background for the text block */
+  border-radius: 20px 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+}
+
+.note-txt h2 {
+  color: #333;
+  /* Dark grey color for the heading */
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ff8b2d;
+  /* Orange underline */
+  padding-bottom: 10px;
+}
+
+.note-txt p {
+  color: #555;
+  /* Medium grey color for the text */
+  line-height: 1.6;
+  font-family: "Arial", sans-serif;
+}
+
+.note-txt a {
+  color: #ff8b2d;
+  /* Orange color for links */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.note-txt a:hover {
+  text-decoration: underline;
+}
+
+.note-txt strong {
+  color: #333;
+  /* Dark grey color for strong text */
+}
+
+/* Selector */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 35px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff8b2d;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+/*ICON NOTE*/
+.notes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  background-color: #f5f5f5;
+  /* Light grey background */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  margin: 20px 0;
+  flex-wrap: wrap;
+  /* Allow items to wrap on smaller screens */
+}
+
+.icon-note {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 20px;
+  /* Space below the icon on smaller screens */
+  display: flex;
+  justify-content: center;
+  /* Center horizontally */
+  align-items: center;
+  /* Center vertically */
+}
+
+.icon-note dotlottie-player {
+  border-radius: 8px;
+  /* Rounded corners for the player */
+  border: 3px solid rgb(25, 25, 128);
+  width: 100%;
+  /* Make the player responsive */
+  max-width: 300px;
+  /* Limit the maximum width */
+  height: auto;
+  /* Maintain aspect ratio */
+}
+
+.note-txt {
+  flex: 2;
+  padding: 20px;
+  background-color: #ffffff;
+  /* White background for the text block */
+  border-radius: 20px 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow */
+  max-width: 100%;
+  /* Ensure it doesn't overflow */
+}
+
+.note-txt h2 {
+  color: #333;
+  /* Dark grey color for the heading */
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ff8b2d;
+  /* Orange underline */
+  padding-bottom: 10px;
+}
+
+.note-txt p {
+  color: #555;
+  /* Medium grey color for the text */
+  line-height: 1.6;
+  font-family: "Arial", sans-serif;
+}
+
+.note-txt a {
+  color: #ff8b2d;
+  /* Orange color for links */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.note-txt a:hover {
+  text-decoration: underline;
+}
+
+.note-txt strong {
+  color: #333;
+  /* Dark grey color for strong text */
+}
+
+/* Extra large devices (larger desktops) */
+@media (min-width: 1201px) {
+  .contact-header {
+    height: 350px;
+  }
+
+  .image-text-container {
+    padding: 30px;
+  }
+
+  .admission-process-content {
+    flex-direction: row;
+  }
+
+  .admission-process-content img {
+    max-width: 40%;
+  }
+
+  .register-button,
+  .register-buttonn {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+/* Selector */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 35px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ff8b2d;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: black;
+}
+
+/*FOOTER*/
+.footer {
+  background-color: rgb(25, 25, 128);
+  padding: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contact-form {
+  padding: 0;
+}
+
+.logo-footer img {
+  margin-right: 200px;
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-linkss,
+.footer-links {
+  margin: 0 20px;
+  /* Adjust margin for spacing */
+  margin-top: 80px;
+  margin-left: 100px;
+}
+
+.footer-linkss h3,
+.footer-links h3 {
+  margin-bottom: 40px;
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+/* New styles for list items */
+.footer-linkss ul,
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  /* Ensure no additional margin */
+}
+
+.footer-linkss li,
+.footer-links li {
+  position: relative;
+  text-align: start;
+  margin-bottom: 10px;
+  /* Increase spacing between items */
+  padding-left: 30px;
+  /* Space for custom bullet */
+  font-size: 1em;
+  color: #ddd;
+  /* Light text color */
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.footer-linkss li::before,
+.footer-links li::before {
+  content: "•";
+  /* Custom bullet point */
+  position: absolute;
+  left: 0;
+  color: #ff8b2d;
+  /* Bullet color */
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.footer-linkss li:hover,
+.footer-links li:hover {
+  color: #ff8b2d;
+  /* Change text color on hover */
+  padding-left: 40px;
+  /* Add more space on hover */
+}
+
+.orange-line {
+  background-color: #191980;
+  /* Orange color */
+  padding: 1px 0;
+  /* Space around the line */
+  position: relative;
+  /* Allows positioning of the line */
+}
+
+.container-end {
+  text-align: center;
+  /* Center the text */
+  color: white;
+  /* Text color */
+  font-size: 14px;
+  /* Font size */
+  margin-bottom: 15px;
+}
+
+.container-end a {
+  color: white;
+  /* Link color */
+  text-decoration: none;
+  /* Remove underline */
+}
+
+.container-end a:hover {
+  color: #ff8b2d;
+}
+
+/* Media Queries */
+
+/* Small devices (phones) */
+@media (max-width: 576px) {
+  .logo-footer img {
+    margin-right: 0;
+    margin-top: 20px;
+    max-width: 80%;
+    /* Ensure logo scales down */
+    display: block;
+    margin: 20px auto;
+    /* Center the logo */
+  }
+
+  .footer-content {
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center items horizontally */
+  }
+
+  .footer-linkss,
+  .footer-links {
+    margin-left: 0;
+    margin-top: 40px;
+    /* Reduce top margin */
+  }
+
+  .footer-linkss h3,
+  .footer-links h3 {
+    font-size: 1.5rem;
+    /* Reduce font size */
+    margin-bottom: 20px;
+    /* Reduce bottom margin */
+  }
+
+  .footer-linkss li,
+  .footer-links li {
+    padding-left: 20px;
+    /* Reduce padding for better fit */
+  }
+}
+
+/* Tablets */
+@media (min-width: 577px) and (max-width: 768px) {
+  .logo-footer img {
+    margin-right: 0;
+    margin-top: 30px;
+    max-width: 90%;
+    /* Ensure logo scales down */
+    display: block;
+    margin: 30px auto;
+    /* Center the logo */
+  }
+
+  .footer-content {
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    /* Center items horizontally */
+  }
+
+  .footer-linkss,
+  .footer-links {
+    margin-left: 0;
+    margin-top: 60px;
+    /* Adjust top margin */
+  }
+
+  .footer-linkss h3,
+  .footer-links h3 {
+    font-size: 1.6rem;
+    /* Slightly reduce font size */
+    margin-bottom: 30px;
+    /* Adjust bottom margin */
+  }
+
+  .footer-linkss li,
+  .footer-links li {
+    padding-left: 25px;
+    /* Adjust padding */
+  }
+}
+
+/* Larger devices (desktops) */
+@media (min-width: 769px) {
+  .logo-footer img {
+    margin-right: 200px;
+    margin-top: 50px;
+    max-width: 100%;
+    /* Ensure logo fits within container */
+    display: inline;
+    /* Display inline with other elements */
+  }
+
+  .footer-content {
+    flex-direction: row;
+    /* Align items horizontally */
+    align-items: flex-start;
+    /* Align items at the top */
+  }
+
+  .footer-linkss,
+  .footer-links {
+    margin-left: 100px;
+    margin-top: 80px;
+    /* Maintain top margin */
+  }
+
+  .footer-linkss h3,
+  .footer-links h3 {
+    font-size: 1.75rem;
+    /* Maintain font size */
+    margin-bottom: 40px;
+    /* Maintain bottom margin */
+  }
+
+  .footer-linkss li,
+  .footer-links li {
+    padding-left: 30px;
+    /* Maintain padding */
+  }
+}
+
+.footerr-columnn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #191980;
+  /* Ensure the content stays on the left */
+}
+
+.logo-footter {
+  display: flex;
+  align-items: center;
+}
+
+.logo-footter img {
+  margin-left: 170px;
+  margin-top: -30px;
+}
+
+.logo-description {
+  margin-left: 200px;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-columnn {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .logo-footter img {
+    margin-right: 0;
+    margin-bottom: 10px;
+    /* Stack the image and text vertically for small screens */
+  }
+
+  .logo-description {
+    max-width: 100%;
+    font-size: 14px;
+    /* Adjust font size for readability on smaller screens */
+  }
+}
