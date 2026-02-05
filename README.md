@@ -1,7 +1,5 @@
 DNC – Dispositif Nouvelle Chance
 
-🔗 Site officiel : https://dnc.tn
-
 📌 Présentation du projet
 
 DNC (Dispositif Nouvelle Chance) est un projet à vocation sociale et citoyenne, destiné à accompagner les jeunes âgés de 18 à 30 ans qui n’ont ni emploi ni baccalauréat, afin de leur offrir une nouvelle opportunité d’insertion professionnelle.
